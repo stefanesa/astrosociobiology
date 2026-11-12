@@ -1,0 +1,9 @@
+{
+  "title": "Astro-Sociobiology",
+  "tagline": "A journal of speculative science on what advanced alien societies might be like",
+  "url": "https://astrosociobiology.com",
+  "author": "Stefan Seltz-Axmacher",
+  "foundingYear": 2025,
+  "journalAbbrev": "Astro-Sociobiol.",
+  "github": { "owner": "stefanesa", "repo": "astrosociobiology", "branch": "main" }
+}

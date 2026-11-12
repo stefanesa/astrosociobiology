@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Editor · Astro-Sociobiology</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="/admin/">Astro&#8209;Sociobiology <em>editor</em></a>
+  <span class="grow"></span>
+  <a href="/" target="_blank">View site ↗</a>
+  <button id="logout" class="link" hidden>Sign out</button>
+</header>
+
+<main id="login" hidden>
+  <h1>Sign in</h1>
+  <p>This editor saves posts by committing them to the site's GitHub repository, which then rebuilds the site automatically. Paste a GitHub <b>fine-grained personal access token</b> with <b>Contents: Read and write</b> permission for this repository only. It is stored only in this browser.</p>
+  <ol class="small">
+    <li>Open <a href="https://github.com/settings/personal-access-tokens/new" target="_blank">GitHub → New fine-grained token</a>.</li>
+    <li>Repository access: <i>Only select repositories</i> → pick <code id="repoName"></code>.</li>
+    <li>Permissions → Repository → <b>Contents: Read and write</b>. Generate, then paste below.</li>
+  </ol>
+  <form id="loginForm">
+    <input id="token" type="password" placeholder="github_pat_…" autocomplete="off" required>
+    <button class="primary">Connect</button>
+  </form>
+  <p id="loginErr" class="err"></p>
+</main>
+
+<main id="list" hidden>
+  <div class="row"><h1>Articles</h1><span class="grow"></span><button id="newPost" class="primary">+ New article</button></div>
+  <p id="listMsg" class="small"></p>
+  <table id="posts"><thead><tr><th>Title</th><th>Type</th><th>Date</th><th></th></tr></thead><tbody></tbody></table>
+  <p class="small">Changes go live about a minute after saving. <a id="actionsLink" target="_blank">Check build status ↗</a></p>
+</main>
+
+<main id="editor" hidden>
+  <div class="row">
+    <button id="back" class="link">← All articles</button>
+    <span class="grow"></span>
+    <label class="chk"><input type="checkbox" id="draft"> Draft (hidden from site)</label>
+    <button id="delete" class="danger" hidden>Delete</button>
+    <button id="save" class="primary">Save &amp; publish</button>
+  </div>
+  <input id="title" class="titleInput" placeholder="Article title">
+  <div class="grid">
+    <label>Type
+      <select id="type"><option>Essay</option><option>Primer</option><option>Field Note</option><option>Response</option><option>Review</option></select>
+    </label>
+    <label>Date <input id="date" type="date"></label>
+    <label>URL slug <input id="slug" placeholder="auto-from-title"></label>
+    <label>Author <input id="author" placeholder="(site default)"></label>
+  </div>
+  <label>Abstract <small>(1–3 sentences shown in listings and at the top of the article)</small>
+    <textarea id="abstract" rows="3"></textarea></label>
+  <label>Keywords <small>(comma separated)</small> <input id="keywords"></label>
+  <div class="tabs">
+    <button class="tab on" data-t="write">Write</button>
+    <button class="tab" data-t="preview">Preview</button>
+    <span class="grow"></span>
+    <label class="upload">🖼 Insert image<input id="img" type="file" accept="image/*" hidden></label>
+  </div>
+  <textarea id="body" rows="26" placeholder="Write in Markdown. ## Heading, *italic*, **bold**, [link](https://…), > quote, - list"></textarea>
+  <div id="preview" class="prose" hidden></div>
+  <p id="editMsg" class="small"></p>
+</main>
+
+<div id="toast" hidden></div>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
