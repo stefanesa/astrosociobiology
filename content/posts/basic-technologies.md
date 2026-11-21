@@ -6,7 +6,7 @@ abstract: "Lists the basic technologies (fire, levers, radio, ink, optics) a spe
 keywords: [technology, planetary science, chemistry, prerequisites, fermi paradox]
 ---
 
-In order to become an "interesting alien" there are basic technologies you need to have access to. If your tree of life starts somewhere that lacks the physical requirements for these basic technologies, it becomes quite the act of contrition to imagine a scenario where an alien species might get to the point that their existence might be known more than a few AU away from their planet.
+In order to become an "interesting alien" there are basic technologies you need to have access to. If your tree of life starts somewhere that lacks the physical requirements for these basic technologies, it becomes quite the act of contortion to imagine a scenario where an alien species might get to the point that their existence might be known more than a few AU away from their planet.
 
 ## Fire
 
